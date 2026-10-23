@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="img/logo.png">
+<title>Ateliê AM Personalizados</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Canecas, camisetas, copos térmicos, garrafas, bottons, ímãs e presentes personalizados feitos à mão em Brasília–DF.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
+<style>
+/* Layout: ateliê editorial — uma só família (Jost), escala tipográfica única, todas as seções centradas no mesmo eixo e na mesma largura, fundos alternados creme/branco, detalhes em cobre. */
+:root{
+  --bg:#fbf6f3; --surface:#ffffff; --blush:#f6e7e2; --blush-2:#ecd3cb;
+  --ink:#3a1d17; --muted:#85665e; --line:#eddcd6;
+  --copper:#a65a3e; --copper-soft:#d3a68c; --wine:#5e2417;
+  --btn:#8b3a24; --btn-ink:#fff9f6; --btn-hover:#70301e; --chip:#fff;
+  --shadow:0 30px 60px -36px rgba(110,40,25,.45);
+  --font:"Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  /* escala: 12 · 14 · 16 · 18 · 22 · 28 · 36 · 44 */
+  --t-xs:.75rem; --t-sm:.875rem; --t-md:1rem; --t-lg:1.125rem; --t-xl:1.375rem; --t-2xl:clamp(1.5rem,2.4vw,1.75rem); --t-3xl:clamp(1.85rem,3.4vw,2.25rem); --t-4xl:clamp(2.1rem,4.2vw,2.75rem);
+  color-scheme:light;
+  --r:18px; --maxw:1160px; --sec:clamp(72px,9vw,120px);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:var(--t-md);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{font-family:var(--font);margin:0;text-wrap:balance;color:var(--wine)}
+h2{font-size:var(--t-4xl);font-weight:300;line-height:1.15;letter-spacing:-.005em}
+h2 em{font-style:normal;color:var(--copper)}
+h3{font-size:var(--t-lg);font-weight:500;line-height:1.3;letter-spacing:.005em}
+p{margin:0}
+strong{font-weight:500}
+:focus-visible{outline:2px solid var(--copper);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+section{padding-block:var(--sec)}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+.eyebrow{display:inline-block;font-size:var(--t-xs);letter-spacing:.32em;text-transform:uppercase;color:var(--copper);font-weight:500}
+.sec-head{display:grid;justify-items:center;text-align:center;gap:14px;max-width:640px;margin:0 auto clamp(40px,5vw,56px)}
+.sec-head p{color:var(--muted);font-size:var(--t-lg);font-weight:300;line-height:1.65}
+.rule{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--copper)}
+.rule::before,.rule::after{content:"";height:1px;width:48px;background:currentColor;opacity:.5}
+.rule svg{width:12px;height:12px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;min-height:50px;padding:0 30px;font:500 var(--t-sm)/1 var(--font);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s,transform .25s,border-color .25s,color .25s}
+.btn-primary{background:var(--btn);color:var(--btn-ink)}
+.btn-primary:hover{background:var(--btn-hover);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--wine);border:1px solid var(--copper-soft)}
+.btn-ghost:hover{border-color:var(--copper);background:var(--surface)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* cabeçalho */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;height:96px}
+.brand{grid-column:2;display:block}
+.brand img{height:72px;width:auto}
+nav.links{grid-column:1;grid-row:1;display:flex;gap:32px;font-size:var(--t-xs);letter-spacing:.24em;text-transform:uppercase}
+nav.links a{text-decoration:none;color:var(--muted);transition:color .2s;position:relative;padding-block:6px}
+nav.links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--copper);transform:scaleX(0);transition:transform .3s}
+nav.links a:hover{color:var(--wine)}
+nav.links a:hover::after{transform:scaleX(1)}
+.bag-btn{grid-column:3;justify-self:end;display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--wine);border:1px solid var(--copper-soft);border-radius:999px;height:46px;padding:0 20px;font:500 var(--t-xs) var(--font);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .25s}
+.bag-btn:hover{border-color:var(--copper);background:var(--surface)}
+.bag-btn .count{min-width:24px;height:24px;border-radius:999px;background:var(--btn);color:var(--btn-ink);font-size:var(--t-xs);letter-spacing:0;display:grid;place-items:center;padding:0 7px;font-variant-numeric:tabular-nums}
+.bag-btn svg{width:18px;height:18px}
+.logo-img{transition:filter .2s}
+@media (max-width:980px){nav.links{display:none}.top .wrap{grid-template-columns:auto 1fr}.brand{grid-column:1}.bag-btn{grid-column:2}}
+@media (max-width:620px){.top .wrap{height:76px}.brand img{height:56px}html{scroll-padding-top:90px}}
+@media (max-width:420px){.bag-btn .lbl{display:none}.bag-btn{padding:0 14px}}
+
+/* abertura */
+.hero{position:relative;overflow:hidden;text-align:center;padding-block:clamp(56px,7vw,96px);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:url("img/padrao.png");background-size:240px auto;opacity:.07}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(50% 60% at 50% 45%,var(--bg) 35%,transparent 100%)}
+.hero .wrap{display:grid;justify-items:center;gap:20px}
+.hero-logo{width:clamp(200px,24vw,300px);height:auto;margin-bottom:6px;animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero h1{font-size:var(--t-4xl);font-weight:300;line-height:1.15;color:var(--wine);max-width:18em}
+.hero h1 em{font-style:normal;color:var(--copper)}
+.hero p.lead{font-size:var(--t-lg);color:var(--muted);max-width:34em;font-weight:300}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:10px}
+.motto{display:flex;gap:18px;align-items:center;justify-content:center;font-size:var(--t-xs);letter-spacing:.34em;text-transform:uppercase;color:var(--muted);flex-wrap:wrap;margin-top:14px}
+.motto i{width:4px;height:4px;border-radius:50%;background:var(--copper)}
+
+/* diferenciais */
+.perks{border-block:1px solid var(--line);background:var(--surface)}
+.perks .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.perk{display:grid;justify-items:center;text-align:center;gap:8px;padding:34px 24px}
+.perk+.perk{border-left:1px solid var(--line)}
+.perk svg{width:26px;height:26px;color:var(--copper)}
+.perk h3{color:var(--ink)}
+.perk p{font-size:var(--t-sm);color:var(--muted);max-width:24em}
+@media (max-width:760px){.perks .wrap{grid-template-columns:1fr}.perk+.perk{border-left:0;border-top:1px solid var(--line)}}
+
+/* quem somos */
+.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.mvv article{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:36px 30px;display:grid;justify-items:center;text-align:center;gap:12px;align-content:start}
+.mvv-ico{width:44px;height:44px;border-radius:50%;background:var(--blush);color:var(--copper);display:grid;place-items:center}
+.mvv-ico svg{width:15px;height:15px}
+.mvv h3{font-size:var(--t-xs);letter-spacing:.32em;text-transform:uppercase;color:var(--copper)}
+.mvv p,.mvv ul{color:var(--ink);font-size:var(--t-md);font-weight:300;line-height:1.7}
+.mvv ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+@media (max-width:860px){.mvv{grid-template-columns:1fr}}
+
+/* catálogo */
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 auto 44px;max-width:900px}
+.chip{border:1px solid var(--line);background:var(--chip);color:var(--muted);border-radius:999px;height:40px;padding:0 18px;font:400 var(--t-sm) var(--font);letter-spacing:.02em;cursor:pointer;transition:all .2s}
+.chip:hover{border-color:var(--copper);color:var(--wine)}
+.chip[aria-pressed="true"]{background:var(--btn);border-color:var(--btn);color:var(--btn-ink)}
+.chip small{opacity:.65;margin-left:6px;font-size:var(--t-xs);font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media (max-width:980px){.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+.card{position:relative;background:var(--surface);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform .35s,box-shadow .35s;min-width:0}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .ph{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--blush);border:0;padding:0;cursor:zoom-in;width:100%;display:block}
+.card .ph img{width:100%;height:100%;object-fit:contain;transition:transform .7s}
+.card:hover .ph img{transform:scale(1.03)}
+.badge{position:absolute;top:14px;left:14px;background:var(--surface);color:var(--copper);font-size:.65rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;padding:6px 12px;border-radius:999px;box-shadow:0 4px 12px -6px rgba(0,0,0,.25)}
+.pics{position:absolute;bottom:14px;right:14px;background:rgba(255,255,255,.92);color:#3a1d17;font-size:var(--t-xs);padding:4px 10px;border-radius:999px}
+.card .body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card .cat{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--copper);font-weight:500}
+.card h3{font-size:var(--t-xl);font-weight:400;color:var(--wine)}
+.card p{font-size:var(--t-sm);color:var(--muted);line-height:1.65}
+.card .foot{margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line)}
+.more{border:0;background:none;color:var(--wine);font:500 var(--t-xs) var(--font);letter-spacing:.18em;text-transform:uppercase;cursor:pointer;padding:6px 0}
+.more:hover{color:var(--copper)}
+.add{border:1px solid var(--copper-soft);background:transparent;color:var(--wine);border-radius:999px;height:38px;padding:0 16px;font:500 var(--t-xs) var(--font);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;display:inline-flex;gap:6px;align-items:center;transition:all .2s;white-space:nowrap}
+.add:hover,.add.added{background:var(--btn);border-color:var(--btn);color:var(--btn-ink)}
+.more-note{margin-top:44px;color:var(--muted);font-size:var(--t-sm);text-align:center}
+.more-note a{color:var(--wine);font-weight:500}
+
+/* como pedir */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;justify-items:center;text-align:center;gap:10px;padding:8px 12px;position:relative}
+.steps li::before{content:counter(s);width:52px;height:52px;border-radius:50%;border:1px solid var(--copper-soft);display:grid;place-items:center;font-size:var(--t-xl);font-weight:300;color:var(--copper);background:var(--surface)}
+.steps li:not(:last-child)::after{content:"";position:absolute;top:34px;left:calc(50% + 40px);right:calc(-50% + 40px);height:1px;background:var(--line)}
+.steps p{color:var(--muted);font-size:var(--t-sm);max-width:22em}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr;row-gap:36px}.steps li::after{display:none}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* ocasiões */
+.ocasioes{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ocasioes span{border:1px solid var(--line);border-radius:var(--r);padding:24px 18px;background:var(--surface);text-align:center;font-size:var(--t-lg);font-weight:400;color:var(--wine);line-height:1.3}
+.ocasioes span small{display:block;color:var(--muted);font-weight:300;font-size:var(--t-sm);margin-top:6px}
+@media (max-width:900px){.ocasioes{grid-template-columns:1fr 1fr}}
+
+/* dúvidas */
+.faq{max-width:760px;margin-inline:auto;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:22px 4px;font-size:var(--t-lg);font-weight:400;color:var(--wine);display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;font-weight:300;line-height:1;color:var(--copper);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 4px 22px;color:var(--muted);max-width:40em}
+
+/* contato */
+.contato{position:relative;isolation:isolate;background:var(--blush);overflow:hidden}
+.contato::before{content:"";position:absolute;inset:0;z-index:-1;background-image:url("img/padrao.png");background-size:240px auto;opacity:.08}
+.ccard{background:var(--surface);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;max-width:980px;margin-inline:auto}
+.cintro{padding:clamp(36px,5vw,56px);display:grid;gap:16px;align-content:center;justify-items:center;text-align:center;border-right:1px solid var(--line)}
+.cintro .mono{width:150px;height:auto;margin-bottom:4px}
+.cintro h2{font-size:var(--t-3xl)}
+.cintro p{color:var(--muted);font-weight:300;max-width:26em}
+.cintro .btn{margin-top:8px}
+.clist{list-style:none;margin:0;padding:clamp(28px,4vw,48px);display:grid;align-content:center;min-width:0}
+.citem{display:flex;align-items:center;gap:18px;padding:22px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;min-width:0}
+.clist li:last-child .citem{border-bottom:0}
+a.citem:hover strong{color:var(--copper)}
+.cico{width:46px;height:46px;flex:none;border-radius:50%;background:var(--blush);color:var(--copper);display:grid;place-items:center}
+.cico svg{width:20px;height:20px}
+.citem div{min-width:0;flex:1}
+.citem small{display:block;font-size:var(--t-xs);letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.citem strong{display:block;font-size:var(--t-lg);font-weight:400;color:var(--wine);line-height:1.35;overflow-wrap:anywhere;transition:color .2s}
+@media (max-width:860px){.ccard{grid-template-columns:1fr}.cintro{border-right:0;border-bottom:1px solid var(--line)}}
+
+footer{padding-block:36px;font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+footer .wrap{display:grid;justify-items:center;gap:12px;text-align:center}
+footer img{height:56px;width:auto}
+
+.wa-float{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 26px -10px rgba(0,0,0,.45);z-index:40;transition:transform .2s}
+.wa-float:hover{transform:scale(1.07)}
+.wa-float svg{width:28px;height:28px}
+
+/* sobreposições */
+.scrim{position:fixed;inset:0;background:rgba(30,10,6,.5);z-index:70;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--bg);z-index:80;transform:translateX(100%);transition:transform .35s ease;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px);box-shadow:-20px 0 40px -20px rgba(0,0,0,.35)}
+.drawer.on{transform:none}
+.dhead{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid var(--line)}
+.dhead h2{font-size:var(--t-2xl);font-weight:300}
+.xbtn{border:0;background:transparent;color:var(--ink);font-size:1.7rem;font-weight:300;cursor:pointer;line-height:1;padding:4px 8px}
+.dbody{flex:1;overflow:auto;padding:20px 24px;display:grid;gap:14px;align-content:start}
+.empty{color:var(--muted);text-align:center;padding:30px 10px;display:grid;gap:14px;justify-items:center;font-size:var(--t-sm)}
+.empty .s{font-size:var(--t-xl);font-weight:300;color:var(--copper)}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px}
+.line img{width:56px;height:56px;border-radius:8px;object-fit:contain;background:var(--blush)}
+.line b{font-weight:400;font-size:var(--t-sm);line-height:1.3;display:block}
+.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px}
+.qty button{border:0;background:transparent;color:var(--ink);width:32px;height:32px;font-size:1.05rem;cursor:pointer}
+.qty span{min-width:22px;text-align:center;font-variant-numeric:tabular-nums;font-weight:500;font-size:var(--t-sm)}
+.dbody label{font-weight:500;font-size:var(--t-sm);display:grid;gap:6px;margin-top:6px}
+.dbody textarea{font:inherit;font-size:var(--t-sm);border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface);color:var(--ink);resize:vertical;width:100%}
+.dbody textarea:focus{outline:none;border-color:var(--copper)}
+.dfoot{padding:16px 24px 22px;border-top:1px solid var(--line);display:grid;gap:10px}
+.dfoot .btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+.dfoot small{color:var(--muted);text-align:center;font-size:var(--t-xs)}
+.modal{position:fixed;inset:0;z-index:85;display:grid;place-items:center;padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));pointer-events:none;opacity:0;transition:opacity .25s}
+.modal.on{opacity:1;pointer-events:auto}
+.mbox{background:var(--bg);border-radius:24px;width:min(980px,100%);max-height:100%;overflow:auto;display:grid;grid-template-columns:1.35fr 1fr;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);position:relative}
+.mbox .xbtn{position:absolute;top:12px;right:12px;z-index:2;background:var(--surface);border-radius:50%;width:42px;height:42px;padding:0}
+.mview{background:var(--blush);display:grid;align-content:start;min-width:0}
+.mview .big{aspect-ratio:1/1;max-height:78vh;background:var(--blush)}
+.mview .big img{width:100%;height:100%;object-fit:contain}
+.thumbs{display:flex;gap:8px;padding:10px;overflow-x:auto}
+.thumbs:empty{display:none}
+.thumbs button{border:2px solid transparent;border-radius:10px;padding:0;overflow:hidden;width:84px;height:63px;flex:none;cursor:pointer;background:none}
+.thumbs button[aria-current="true"]{border-color:var(--copper)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.minfo{padding:40px 32px;display:grid;gap:14px;align-content:start;min-width:0}
+.minfo h2{font-size:var(--t-3xl)}
+.minfo p{color:var(--muted);font-weight:300}
+.minfo ul{margin:0;padding-left:1.1em;color:var(--muted);display:grid;gap:4px;font-size:var(--t-sm)}
+@media (max-width:760px){.mbox{grid-template-columns:1fr}.minfo{padding:26px 22px}}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:var(--t-sm);opacity:0;transition:all .25s;z-index:95;pointer-events:none;max-width:calc(100% - 32px)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.5.7-1.3 2.2-2.5 4.3-2.5 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 6h18v12H3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M8 13V5.5a1.5 1.5 0 0 1 3 0V11m0-6.5a1.5 1.5 0 0 1 3 0V11m0-5a1.5 1.5 0 0 1 3 0v7c0 4-2.5 8-7 8-3 0-4.5-1.5-6-4l-2-3.5a1.5 1.5 0 0 1 2.6-1.5L8 13"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 20h4L19 9l-4-4L4 16zM13 7l4 4"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7c-2-4-6-3-5 0m5 0c2-4 6-3 5 0"/></symbol>
+</svg>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Ateliê AM Personalizados, início"><img class="logo-img" src="img/logo.png" alt="Ateliê AM Personalizados" width="440" height="255"></a>
+    <nav class="links" aria-label="Seções">
+      <a href="#quem-somos">Quem somos</a>
+      <a href="#catalogo">Produtos</a>
+      <a href="#como">Como pedir</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="bag-btn" id="openBag" type="button" aria-label="Abrir meu orçamento">
+      <svg aria-hidden="true"><use href="#i-bag"/></svg><span class="lbl">Orçamento</span><span class="count" id="bagCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <img class="hero-logo logo-img" src="img/logo.png" alt="Ateliê AM Personalizados" width="440" height="255">
+      <span class="eyebrow">Presentes feitos à mão · Brasília–DF</span>
+      <div class="rule" aria-hidden="true"><svg><use href="#i-heart"/></svg></div>
+      <h1>Presentes que guardam <em>histórias</em></h1>
+      <p class="lead">Canecas, camisetas, copos, bottons, ímãs, foto ímãs e lembrancinhas feitos à mão no ateliê, com o nome, a foto ou a frase que você escolher.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#catalogo">Ver produtos</a>
+        <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://wa.me/5561985962616?text=Ol%C3%A1%2C%20Ateli%C3%AA%20AM%21%20Gostaria%20de%20fazer%20um%20or%C3%A7amento."><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+      </div>
+      <div class="motto" aria-label="Criar, encantar, personalizar"><span>Criar</span><i></i><span>Encantar</span><i></i><span>Personalizar</span></div>
+    </div>
+  </section>
+
+  <div class="perks">
+    <div class="wrap">
+      <div class="perk"><svg aria-hidden="true"><use href="#i-hand"/></svg><h3>Feito à mão</h3><p>Cada peça produzida e conferida no ateliê.</p></div>
+      <div class="perk"><svg aria-hidden="true"><use href="#i-pen"/></svg><h3>Do seu jeito</h3><p>Nomes, fotos e frases, com arte aprovada antes.</p></div>
+      <div class="perk"><svg aria-hidden="true"><use href="#i-gift"/></svg><h3>Para empresas</h3><p>Brindes, kits e lembrancinhas em quantidade.</p></div>
+    </div>
+  </div>
+
+  <section id="quem-somos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Quem somos</span>
+        <h2>Um ateliê feito de <em>afeto e detalhes</em></h2>
+        <p>Transformamos ideias em presentes únicos, feitos à mão em Brasília e pensados para cada pessoa.</p>
+      </div>
+      <div class="mvv">
+        <article><span class="mvv-ico"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><h3>Missão</h3><p>Transformar ideias em presentes personalizados feitos à mão, com carinho em cada detalhe, para que cada peça guarde uma história.</p></article>
+        <article><span class="mvv-ico"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><h3>Visão</h3><p>Ser referência em presentes personalizados em Brasília e no DF, lembrada pela qualidade, criatividade e atendimento próximo.</p></article>
+        <article><span class="mvv-ico"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><h3>Valores</h3><ul><li>Carinho em cada detalhe</li><li>Criatividade e qualidade</li><li>Respeito ao cliente</li><li>Inclusão e transparência</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogo" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Catálogo</span>
+        <h2>Nossos <em>produtos</em></h2>
+        <p>Escolha o tipo de produto, toque na foto para ver os detalhes e adicione ao seu orçamento.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar por tipo de produto" id="filters"></div>
+      <div class="grid" id="grid"></div>
+      <p class="more-note">Também fazemos papelaria personalizada e outras peças. Tem uma ideia diferente? <a href="#contato">Conte pra gente</a>.</p>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Como pedir</span>
+        <h2>Do seu jeito, <em>em quatro passos</em></h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Escolha as peças</h3><p>Adicione os produtos ao orçamento aqui no site ou chame direto no WhatsApp.</p></li>
+        <li><h3>Conte sua ideia</h3><p>Envie nome, foto, frase ou tema. Se preferir, a gente cria a arte.</p></li>
+        <li><h3>Aprove a arte</h3><p>Você recebe a prévia e só produzimos depois do seu “ok”.</p></li>
+        <li><h3>Receba com carinho</h3><p>Combinamos a entrega ou a retirada em Brasília.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Para cada momento</span>
+        <h2>Presentes para <em>todas as datas</em></h2>
+      </div>
+      <div class="ocasioes">
+        <span>Natal<small>Kits e lembrancinhas</small></span>
+        <span>Aniversários<small>Nome, foto e idade</small></span>
+        <span>Dia dos Professores<small>Canecas e ímãs com nome</small></span>
+        <span>Mães e Pais<small>Fotos de família</small></span>
+        <span>Batizados e catequese<small>Bottons e lembrancinhas</small></span>
+        <span>Esportes<small>Academias e equipes</small></span>
+        <span>Empresas<small>Brindes com a sua marca</small></span>
+        <span>Casamentos e chás<small>Caixas MDF e lembranças</small></span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Dúvidas</span>
+        <h2>Perguntas <em>frequentes</em></h2>
+      </div>
+      <div class="faq">
+        <details><summary>Posso enviar minha própria arte ou foto?</summary><p>Pode. Envie a imagem pelo WhatsApp em boa resolução. Se não tiver arte pronta, conte a ideia e a gente cria a prévia para você aprovar.</p></details>
+        <details><summary>Vocês fazem pedidos em quantidade?</summary><p>Sim. Fazemos brindes corporativos, kits e lembrancinhas em quantidade. Informe o número de peças no orçamento.</p></details>
+        <details><summary>Quanto custa e qual o prazo?</summary><p>Valores e prazo dependem da peça, da quantidade e da personalização. Monte seu orçamento aqui no site e respondemos pelo WhatsApp com tudo certinho antes de começar.</p></details>
+        <details><summary>Onde vocês atendem?</summary><p>O ateliê fica em Brasília–DF. A forma de entrega ou retirada é combinada no orçamento.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <div class="wrap">
+      <div class="ccard">
+        <div class="cintro">
+          <img class="mono logo-img" src="img/logo.png" alt="Ateliê AM Personalizados">
+          <span class="eyebrow">Contato</span>
+          <h2>Conte sua ideia, <em>a gente personaliza</em></h2>
+          <p>Receba seu orçamento pelo WhatsApp ou pelo direct do Instagram.</p>
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5561985962616?text=Ol%C3%A1%2C%20Ateli%C3%AA%20AM%21%20Gostaria%20de%20fazer%20um%20or%C3%A7amento."><svg aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+        </div>
+        <ul class="clist">
+          <li><a class="citem" target="_blank" rel="noopener" href="https://wa.me/5561985962616?text=Ol%C3%A1%2C%20Ateli%C3%AA%20AM%21%20Gostaria%20de%20fazer%20um%20or%C3%A7amento."><span class="cico"><svg aria-hidden="true"><use href="#i-wa"/></svg></span><div><small>WhatsApp</small><strong>(61) 98596-2616</strong></div></a></li>
+          <li><a class="citem" target="_blank" rel="noopener" href="https://www.instagram.com/atelie.ampersonalizados2026?utm_source=qr&amp;srtk=ODFhZW9qbncya2Jy"><span class="cico"><svg aria-hidden="true"><use href="#i-ig"/></svg></span><div><small>Instagram</small><strong>@atelie.ampersonalizados2026</strong></div></a></li>
+          <li><div class="citem"><span class="cico"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><div><small>Ateliê</small><strong>Brasília–DF</strong></div></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><img class="logo-img" src="img/logo.png" alt="Ateliê AM Personalizados"><span>© 2026 Ateliê AM Personalizados · Criar • Encantar • Personalizar</span></div>
+</footer>
+
+<a class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" href="https://wa.me/5561985962616?text=Ol%C3%A1%2C%20Ateli%C3%AA%20AM%21%20Gostaria%20de%20fazer%20um%20or%C3%A7amento."><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Meu orçamento" aria-hidden="true">
+  <div class="dhead"><h2>Meu orçamento</h2><button class="xbtn" id="closeBag" type="button" aria-label="Fechar">×</button></div>
+  <div class="dbody" id="dbody"></div>
+  <div class="dfoot">
+    <a class="btn btn-primary" id="sendWa" target="_blank" rel="noopener" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar pedido pelo WhatsApp</a>
+    <small>A mensagem abre pronta no WhatsApp. Você revisa e envia.</small>
+  </div>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" aria-hidden="true">
+  <div class="mbox">
+    <button class="xbtn" id="closeModal" type="button" aria-label="Fechar">×</button>
+    <div class="mview"><div class="big"><img id="mImg" src="img/caixas.jpg" alt=""></div><div class="thumbs" id="mThumbs"></div></div>
+    <div class="minfo">
+      <span class="eyebrow" id="mCat"></span>
+      <h2 id="mTitle"></h2>
+      <p id="mDesc"></p>
+      <ul id="mList"></ul>
+      <button class="btn btn-primary" id="mAdd" type="button">Adicionar ao orçamento</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const PHONE="5561985962616";
+const CATS=[["todos", "Todos"], ["canecas", "Canecas"], ["camisetas", "Camisetas"], ["copos", "Copos"], ["garrafas", "Garrafas"], ["bottons", "Bottons"], ["imas", "Ímãs de geladeira"], ["lembrancinhas", "Lembrancinhas"], ["caixas", "Caixas MDF"], ["portajoias", "Porta-joias"], ["marcadores", "Marcadores de livro"], ["chaveiros", "Chaveiros"]];
+const P=[
+ {"id": "caneca-professores", "cat": "canecas", "name": "Caneca Dia dos Professores", "imgs": ["n/professora-janaina", "n/professora-ana", "n/feliz-dia-professor"], "desc": "Com o nome do professor ou da professora e arte nos dois lados.", "novo": 1, "list": ["Nome personalizado", "Arte frente e verso"]},
+ {"id": "caneca-foto", "cat": "canecas", "name": "Caneca com foto", "imgs": ["n/caneca-foto-caixa"], "desc": "Sua foto favorita estampada na caneca, entregue em caixa kraft com visor e laço.", "novo": 1, "list": ["Caixa presente com laço"]},
+ {"id": "caneca-amor", "cat": "canecas", "name": "Caneca com declaração", "imgs": ["n/neguinho-te-amo"], "desc": "Uma frase de carinho e uma mensagem especial para quem você ama.", "novo": 1, "list": ["Caixa presente com laço"]},
+ {"id": "caneca-versiculo", "cat": "canecas", "name": "Caneca com versículo", "imgs": ["n/versiculos-caixas", "n/leao-corajoso", "n/mae-davi-salmo"], "desc": "Versículos e frases de fé, com opção de nome e caixa presente.", "novo": 1, "list": ["Várias artes", "Opção com nome"]},
+ {"id": "caneca-aparecida", "cat": "canecas", "name": "Caneca Nossa Senhora Aparecida", "imgs": ["n/aparecida-azul", "caneca-aparecida"], "desc": "Arte em azul e dourado, com opção de nome e caixa presente.", "list": ["Opção com nome", "Caixa presente com laço"]},
+ {"id": "caneca-fatima", "cat": "canecas", "name": "Caneca Nossa Senhora de Fátima", "imgs": ["n/canecas-fatima"], "desc": "Três artes para escolher: creme e dourado, céu azul ou rosas.", "novo": 1, "list": ["Caneca 325 ml"]},
+ {"id": "caneca-maezinha", "cat": "canecas", "name": "Caneca Mãezinha do Céu", "imgs": ["n/mae-do-ceu"], "desc": "Ilustração delicada de um lado e oração do outro."},
+ {"id": "caneca-natal", "cat": "canecas", "name": "Caneca de Natal", "imgs": ["n/canecas-natal", "n/natal-caneca-botton"], "desc": "Artes de Natal e Ano Novo, com opção de incluir uma foto.", "novo": 1, "list": ["Caneca 325 ml", "Combina com bottons e camiseta"]},
+ {"id": "caneca-mar", "cat": "canecas", "name": "Caneca Mar e praia", "imgs": ["n/canecas-mar", "n/canecas-onda"], "desc": "Paisagens do mar com frases leves, arte nos dois lados.", "novo": 1, "list": ["Caneca 325 ml", "Vários modelos"]},
+ {"id": "caneca-esporte", "cat": "canecas", "name": "Caneca para academias e equipes", "imgs": ["n/abks-2", "n/abks-3"], "desc": "Arte com o nome da academia, dojô ou time, envolvendo a caneca toda."},
+ {"id": "colecao", "cat": "camisetas", "name": "Camiseta estampada", "imgs": ["n/colecao-preto", "n/colecao-branco", "n/colecao-amarelo", "n/colecao-azul", "n/colecao-rosa"], "desc": "Dez estampas para escolher: dino skatista, capivara astronauta, unicórnio, cachorro de óculos, gatinho na lua, xícara sorridente, vitrola retrô, montanha, onda tropical e buquê silvestre.", "list": ["Cores: preto, branco, amarelo, azul ou rosa", "Estampa A4 · 21 × 29,7 cm", "Informe o número da estampa (01 a 10) no orçamento"]},
+ {"id": "libras-interprete", "cat": "camisetas", "name": "Camiseta Intérprete de LIBRAS", "imgs": ["n/libras-nova-preta", "n/libras-nova-branca", "libras-preta", "cena/libras-interprete"], "desc": "Lâmpada com coração e “LIBRAS” na frente; alfabeto manual completo e “Mais inclusão por meio da comunicação” nas costas.", "novo": 1, "list": ["Branca ou preta", "Frente e costas"]},
+ {"id": "libras-bolso", "cat": "camisetas", "name": "Camiseta LIBRAS coração", "imgs": ["libras-bolso", "cena/libras-bolso"], "desc": "Sinal de “eu te amo” com coração no peito e alfabeto de A a Z nas costas."},
+ {"id": "aceite", "cat": "camisetas", "name": "Camiseta Aceite, Entenda, Ame", "imgs": ["aceite-par"], "desc": "O sinal de “eu te amo” em LIBRAS com batimento cardíaco, em tons de azul.", "list": ["Branca ou preta"]},
+ {"id": "animal-club", "cat": "camisetas", "name": "Camiseta Animal Club", "imgs": ["animal-club"], "desc": "Bichinhos 3D em arte exclusiva: gatinho, macaquinho e a turma dos cães."},
+ {"id": "camiseta-esporte", "cat": "camisetas", "name": "Camiseta para academias e equipes", "imgs": ["n/abks-kit"], "desc": "A mesma arte da caneca, para montar o kit completo da sua equipe.", "novo": 1},
+ {"id": "camiseta-natal", "cat": "camisetas", "name": "Camiseta de Natal", "imgs": ["n/natal-kit"], "desc": "Arte do presépio que combina com a caneca e os bottons de Natal.", "novo": 1},
+ {"id": "camisetas", "cat": "camisetas", "name": "Camiseta com frase ou logo", "imgs": ["camisetas"], "desc": "Várias cores, com frases, nomes ou a marca da sua empresa."},
+ {"id": "copo-vidro", "cat": "copos", "name": "Copo de vidro personalizado", "imgs": ["n/copo-aniversario"], "desc": "Para aniversários e festas, com o nome e a idade do aniversariante.", "novo": 1, "list": ["Ideal para lembrancinha de festa"]},
+ {"id": "copos-coloridos", "cat": "copos", "name": "Copo térmico colorido", "imgs": ["copos-coloridos"], "desc": "Tampa com abertura, cores vibrantes e frase do seu jeito."},
+ {"id": "copos-12l", "cat": "copos", "name": "Copo térmico 1,2 L", "imgs": ["copos-12l"], "desc": "Com alça e canudo. Mantém a temperatura por horas."},
+ {"id": "copos-classicos", "cat": "copos", "name": "Copo térmico clássico", "imgs": ["copos-classicos"], "desc": "Preto, branco e azul-marinho."},
+ {"id": "garrafas-prata", "cat": "garrafas", "name": "Garrafa prata 500 ml", "imgs": ["garrafas-prata"], "desc": "Aço inox escovado com frase personalizada."},
+ {"id": "garrafas-500", "cat": "garrafas", "name": "Garrafa térmica 500 ml", "imgs": ["garrafas-500"], "desc": "Compacta, em dourado ou branco, com isolamento térmico."},
+ {"id": "bottons", "cat": "bottons", "name": "Bottons personalizados", "imgs": ["bottons", "cena/bottons-kit", "cena/bottons-grade"], "desc": "Com a arte ou o tema que você escolher, embalados com o cartão do ateliê.", "list": ["Embalagem personalizada AM"]},
+ {"id": "bottons-professores", "cat": "bottons", "name": "Bottons e ímãs Dia dos Professores", "imgs": ["n/professores-imas", "n/professores-imas-precos"], "desc": "Artes para homenagear professores, em botton com alfinete ou ímã com manta magnética.", "novo": 1, "list": ["Redondos: 32, 44 e 58 mm", "Quadrado: 50 × 50 mm"]},
+ {"id": "foto-ima", "cat": "imas", "name": "Foto ímã", "imgs": ["n/fotoima-gato", "n/fotoima-caes", "n/fotoima-frases"], "desc": "A foto do seu pet, da família ou uma frase especial, em ímã redondo ou quadrado.", "novo": 1, "list": ["Com nome e frase", "Vários fundos para escolher"]},
+ {"id": "imas", "cat": "imas", "name": "Ímãs de geladeira", "imgs": ["n/imas-temas", "n/imas-fotos", "imas", "imas-geladeira"], "desc": "Vários temas ou a sua própria foto com frase. Papel imantado no verso, leve e resistente.", "novo": 1, "list": ["Redondos: 32, 44 e 58 mm", "Quadrado: 50 × 50 mm"]},
+ {"id": "imas-pet", "cat": "imas", "name": "Ímãs e bottons pet", "imgs": ["n/colecao-pet", "n/pet-amor"], "desc": "A foto do seu bichinho com uma frase carinhosa, em ímã de geladeira ou botton.", "novo": 1, "list": ["Redondos: 32, 44 e 58 mm", "Quadrado: 50 × 50 mm"]},
+ {"id": "cha", "cat": "lembrancinhas", "name": "Kit lembrancinhas chá de bebê", "imgs": ["n/cha-kit", "n/cha-sacola"], "desc": "Tudo no mesmo tema: sacola, tubete, potes, latinha, toalhinha, saquinho e caneca com etiqueta personalizada.", "novo": 1, "list": ["Nome do bebê e frase de agradecimento", "Montamos o kit do seu jeito"]},
+ {"id": "caixas", "cat": "caixas", "name": "Caixa MDF personalizada", "imgs": ["caixas"], "desc": "Para kits, lembrancinhas e brindes, com mensagem na tampa."},
+ {"id": "portajoias", "cat": "portajoias", "name": "Porta-joias personalizado", "imgs": ["portajoias"], "desc": "Compacto, em várias cores, com nome ou monograma gravado."},
+ {"id": "marcadores", "cat": "marcadores", "name": "Marcador magnético de livro", "imgs": ["marcadores"], "desc": "Presente certo para quem ama ler. Arte dos dois lados."},
+ {"id": "chaveiros", "cat": "chaveiros", "name": "Chaveiro personalizado", "imgs": ["chaveiros"], "desc": "Sua arte, foto ou frase num chaveiro para levar sempre."}
+];
+const byId=Object.fromEntries(P.map(p=>[p.id,p]));
+const catName=Object.fromEntries(CATS);
+const src=n=>`img/${n}.jpg`;
+
+let bag={},note="",filter="todos";
+try{const s=JSON.parse(localStorage.getItem("am-bag")||"{}");bag=s.bag||{};note=s.note||""}catch(e){}
+Object.keys(bag).forEach(k=>{if(!byId[k])delete bag[k]});
+function save(){try{localStorage.setItem("am-bag",JSON.stringify({bag,note}))}catch(e){}}
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function cardHTML(p,eager){
+  return `<article class="card">
+    <button class="ph" type="button" data-zoom="${p.id}" data-i="0" aria-label="Ver fotos de ${esc(p.name)}"><img ${eager?"":'loading="lazy"'} src="img/q/${p.id}.jpg" alt="${esc(p.name)}">
+      ${p.novo?'<span class="badge">Novo</span>':''}${p.imgs.length>1?`<span class="pics">${p.imgs.length} fotos</span>`:''}</button>
+    <div class="body"><span class="cat">${catName[p.cat]}</span><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p>
+    <div class="foot"><button class="more" type="button" data-zoom="${p.id}" data-i="0">Ver detalhes →</button>
+    <button class="add ${bag[p.id]?"added":""}" type="button" data-add="${p.id}">${bag[p.id]?"✓ No orçamento":"+ Adicionar"}</button></div></div>
+  </article>`;
+}
+function renderLists(){
+  $("#filters").innerHTML=CATS.map(([k,l])=>{const n=k==="todos"?P.length:P.filter(p=>p.cat===k).length;return `<button class="chip" type="button" data-f="${k}" aria-pressed="${k===filter}">${l}<small>${n}</small></button>`}).join("");
+  $("#grid").innerHTML=P.filter(p=>filter==="todos"||p.cat===filter).map(p=>cardHTML(p)).join("");
+}
+function count(){return Object.values(bag).reduce((a,b)=>a+b,0)}
+function renderBag(){
+  $("#bagCount").textContent=count();
+  const ids=Object.keys(bag),body=$("#dbody");
+  if(!ids.length){
+    body.innerHTML=`<div class="empty"><span class="s">Seu orçamento está vazio</span><p>Adicione peças e elas aparecem aqui, prontas para enviar ao ateliê.</p><button class="btn btn-ghost" type="button" id="goCat">Ver produtos</button></div>`;
+  }else{
+    body.innerHTML=ids.map(id=>{const p=byId[id];return `<div class="line"><img src="img/q/${p.id}.jpg" alt=""><div><b>${esc(p.name)}</b></div>
+      <div class="qty"><button type="button" data-q="${id}" data-d="-1" aria-label="Diminuir ${esc(p.name)}">−</button><span>${bag[id]}</span><button type="button" data-q="${id}" data-d="1" aria-label="Aumentar ${esc(p.name)}">+</button></div></div>`}).join("")+
+      `<label for="note">Nome, frase, tema, cores ou tamanhos<textarea id="note" rows="4" placeholder="Ex.: 2 camisetas Intérprete de LIBRAS pretas, tamanhos M e G; caneca com o nome Margarida.">${esc(note)}</textarea></label>`;
+  }
+  updateLink();
+}
+function message(){
+  let m="Olá, Ateliê AM! Gostaria de um orçamento:\n";
+  Object.keys(bag).forEach(id=>m+=`• ${bag[id]}× ${byId[id].name}\n`);
+  if(note.trim())m+=`\nDetalhes: ${note.trim()}`;
+  return m;
+}
+function updateLink(){const a=$("#sendWa"),empty=!count();a.href=empty?"#":`https://wa.me/${PHONE}?text=${encodeURIComponent(message())}`;a.setAttribute("aria-disabled",empty)}
+let tt;function toast(t){const el=$("#toast");el.textContent=t;el.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>el.classList.remove("on"),1800)}
+function openBag(){closeModal();$("#drawer").classList.add("on");$("#scrim").classList.add("on");$("#drawer").setAttribute("aria-hidden","false");$("#closeBag").focus()}
+function closeBag(){$("#drawer").classList.remove("on");$("#drawer").setAttribute("aria-hidden","true");if(!$("#modal").classList.contains("on"))$("#scrim").classList.remove("on")}
+
+let mCur=null,lastFocus=null;
+function showImg(i){$("#mImg").src=src(mCur.imgs[i]);$("#mImg").alt=mCur.name;[...$("#mThumbs").children].forEach((b,j)=>b.setAttribute("aria-current",j===i))}
+function openModal(id,i){
+  const p=byId[id];if(!p)return;mCur=p;lastFocus=document.activeElement;
+  $("#mCat").textContent=catName[p.cat]||"";$("#mTitle").textContent=p.name;$("#mDesc").textContent=p.desc||"";
+  $("#mList").innerHTML=(p.list||[]).map(x=>`<li>${esc(x)}</li>`).join("");$("#mList").hidden=!(p.list||[]).length;
+  $("#mThumbs").innerHTML=p.imgs.length>1?p.imgs.map((n,j)=>`<button type="button" data-thumb="${j}" aria-label="Foto ${j+1}"><img src="${src(n)}" alt=""></button>`).join(""):"";
+  $("#mAdd").dataset.add=p.id;$("#mAdd").textContent=bag[p.id]?"✓ Já está no orçamento":"Adicionar ao orçamento";
+  showImg(Math.min(+i||0,p.imgs.length-1));
+  $("#modal").classList.add("on");$("#scrim").classList.add("on");$("#modal").setAttribute("aria-hidden","false");$("#closeModal").focus();
+}
+function closeModal(){if(!$("#modal").classList.contains("on"))return;$("#modal").classList.remove("on");$("#modal").setAttribute("aria-hidden","true");$("#scrim").classList.remove("on");lastFocus&&lastFocus.focus&&lastFocus.focus()}
+
+document.addEventListener("click",e=>{
+  const t=e.target;
+  const f=t.closest("[data-f]");if(f){filter=f.dataset.f;renderLists();return}
+  const z=t.closest("[data-zoom]");if(z){openModal(z.dataset.zoom,z.dataset.i);return}
+  const th=t.closest("[data-thumb]");if(th){showImg(+th.dataset.thumb);return}
+  const sw=t.closest("[data-cor]");if(sw){document.querySelectorAll("[data-cor]").forEach(b=>b.setAttribute("aria-pressed",b===sw));const im=$("#stageImg");im.classList.add("fade");setTimeout(()=>{im.src=`img/cena/colecao-${sw.dataset.cor}.jpg`;im.alt=`Coleção de 10 estampas em camisetas na cor ${sw.textContent.trim().toLowerCase()}`;im.onload=()=>im.classList.remove("fade")},200);return}
+  const add=t.closest("[data-add]");
+  if(add){const id=add.dataset.add;if(!bag[id]){bag[id]=1;toast(`${byId[id].name} adicionado ao orçamento`)}else toast("Já está no orçamento");save();renderLists();renderBag();
+    if(add.id==="mAdd"){add.textContent="✓ Já está no orçamento"}else if(add.classList.contains("btn"))openBag();return}
+  const q=t.closest("[data-q]");if(q){const id=q.dataset.q;bag[id]=(bag[id]||0)+Number(q.dataset.d);if(bag[id]<=0)delete bag[id];save();renderBag();renderLists();return}
+  if(t.closest("#openBag"))return openBag();
+  if(t.closest("#closeBag"))return closeBag();
+  if(t.closest("#closeModal"))return closeModal();
+  if(t.id==="scrim"||t.id==="modal"){closeModal();closeBag();return}
+  if(t.closest("#goCat")){closeBag();document.getElementById("catalogo").scrollIntoView();return}
+  if(t.closest("#copyMail")){const b=$("#copyMail"),txt=$("#mail").textContent;
+    const ok=()=>{b.textContent="Copiado";setTimeout(()=>b.textContent="Copiar",1600)};
+    const fb=()=>{const r=document.createRange();r.selectNodeContents($("#mail"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selecionado"};
+    try{navigator.clipboard.writeText(txt).then(ok,fb)}catch(err){fb()}}
+});
+document.addEventListener("input",e=>{if(e.target.id==="note"){note=e.target.value;save();updateLink()}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeModal();closeBag()}
+  if($("#modal").classList.contains("on")&&mCur&&mCur.imgs.length>1&&(e.key==="ArrowRight"||e.key==="ArrowLeft")){
+    const cur=[...$("#mThumbs").children].findIndex(b=>b.getAttribute("aria-current")==="true");const n=mCur.imgs.length;showImg((cur+(e.key==="ArrowRight"?1:n-1))%n)}});
+
+renderLists();renderBag();
+</script>
+
+</body>
+</html>
