@@ -30,6 +30,7 @@ Ser referência em presentes personalizados em Brasília e no DF, lembrada pela 
 
 | Tipo | Exemplos |
 |---|---|
+| Kits personalizados | Kits infantis temáticos, Safari, Pequeno Príncipe e Natal (caneca, botton, foto ímã e camiseta) |
 | Canecas | Dia dos Professores, com foto, com declaração, com versículo, Natal, Mar e praia, academias e equipes |
 | Camisetas | Coleção de 10 estampas em 5 cores, linha LIBRAS, Animal Club, Natal, equipes, frase ou logo |
 | Copos | Copo de vidro para festas e copos térmicos |

@@ -272,7 +272,7 @@ footer img{height:56px;width:auto}
       <span class="eyebrow">Presentes feitos à mão · Brasília–DF</span>
       <div class="rule" aria-hidden="true"><svg><use href="#i-heart"/></svg></div>
       <h1>Presentes que guardam <em>histórias</em></h1>
-      <p class="lead">Canecas, camisetas, copos, bottons, ímãs, foto ímãs e lembrancinhas feitos à mão no ateliê, com o nome, a foto ou a frase que você escolher.</p>
+      <p class="lead">Canecas, camisetas, kits temáticos, copos, bottons, ímãs, foto ímãs e lembrancinhas feitos à mão no ateliê, com o nome, a foto ou a frase que você escolher.</p>
       <div class="ctas">
         <a class="btn btn-primary" href="#catalogo">Ver produtos</a>
         <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://wa.me/5561985962616?text=Ol%C3%A1%2C%20Ateli%C3%AA%20AM%21%20Gostaria%20de%20fazer%20um%20or%C3%A7amento."><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
@@ -419,8 +419,12 @@ footer img{height:56px;width:auto}
 
 <script>
 const PHONE="5561985962616";
-const CATS=[["todos", "Todos"], ["canecas", "Canecas"], ["camisetas", "Camisetas"], ["copos", "Copos"], ["garrafas", "Garrafas"], ["bottons", "Bottons"], ["imas", "Ímãs de geladeira"], ["lembrancinhas", "Lembrancinhas"], ["caixas", "Caixas MDF"], ["portajoias", "Porta-joias"], ["marcadores", "Marcadores de livro"], ["chaveiros", "Chaveiros"]];
+const CATS=[["todos", "Todos"], ["kits", "Kits personalizados"], ["canecas", "Canecas"], ["camisetas", "Camisetas"], ["copos", "Copos"], ["garrafas", "Garrafas"], ["bottons", "Bottons"], ["imas", "Ímãs de geladeira"], ["lembrancinhas", "Lembrancinhas"], ["caixas", "Caixas MDF"], ["portajoias", "Porta-joias"], ["marcadores", "Marcadores de livro"], ["chaveiros", "Chaveiros"]];
 const P=[
+ {"id": "kit-infantil", "cat": "kits", "name": "Kit infantil temático", "imgs": ["n/kits-temas-1", "n/kits-temas-2"], "desc": "Caneca, botton, foto ímã e camiseta com o mesmo tema e a mesma frase. Temas: Fundo do Mar, Jardim Encantado, Borboletas, Fazendinha, Astronauta, Safari, Pequeno Príncipe, Natal, Dinossauros e Unicórnio.", "novo": 1, "list": ["Caneca 325 ml", "Botton 58 mm", "Foto ímã 50 mm", "Camiseta", "Peças também vendidas separadas"]},
+ {"id": "kit-safari", "cat": "kits", "name": "Kit Coleção Safari", "imgs": ["n/kit-safari-1", "n/kit-safari-2"], "desc": "Dez artes com bichinhos e frases carinhosas: leão, elefante, girafa, zebra, macaco, hipopótamo, rinoceronte, tigre, suricato e a turma toda.", "novo": 1, "list": ["Caneca 325 ml", "Botton 58 mm", "Foto ímã 50 mm", "Camiseta"]},
+ {"id": "kit-pequeno-principe", "cat": "kits", "name": "Kit Coleção Pequeno Príncipe", "imgs": ["n/kit-pequeno-principe"], "desc": "Cinco artes delicadas com frases sobre amor, cuidado e sonhos.", "novo": 1, "list": ["Caneca 325 ml", "Botton 58 mm", "Foto ímã 50 mm", "Camiseta"]},
+ {"id": "kit-natal", "cat": "kits", "name": "Kit de Natal", "imgs": ["n/natal-boneco", "n/natal-presepio", "n/natal-vila", "n/natal-rena", "n/natal-luz-jesus", "n/natal-kit", "n/natal-caneca-botton"], "desc": "Botton redondo, botton quadrado, caneca e camiseta com a mesma arte de Natal. Sete artes para escolher.", "novo": 1, "list": ["Botton redondo 58 mm", "Botton quadrado 50 mm", "Caneca 325 ml", "Camiseta"]},
  {"id": "caneca-professores", "cat": "canecas", "name": "Caneca Dia dos Professores", "imgs": ["n/professora-janaina", "n/professora-ana", "n/feliz-dia-professor"], "desc": "Com o nome do professor ou da professora e arte nos dois lados.", "novo": 1, "list": ["Nome personalizado", "Arte frente e verso"]},
  {"id": "caneca-foto", "cat": "canecas", "name": "Caneca com foto", "imgs": ["n/caneca-foto-caixa"], "desc": "Sua foto favorita estampada na caneca, entregue em caixa kraft com visor e laço.", "novo": 1, "list": ["Caixa presente com laço"]},
  {"id": "caneca-amor", "cat": "canecas", "name": "Caneca com declaração", "imgs": ["n/neguinho-te-amo"], "desc": "Uma frase de carinho e uma mensagem especial para quem você ama.", "novo": 1, "list": ["Caixa presente com laço"]},
@@ -428,7 +432,7 @@ const P=[
  {"id": "caneca-aparecida", "cat": "canecas", "name": "Caneca Nossa Senhora Aparecida", "imgs": ["n/aparecida-azul", "caneca-aparecida"], "desc": "Arte em azul e dourado, com opção de nome e caixa presente.", "list": ["Opção com nome", "Caixa presente com laço"]},
  {"id": "caneca-fatima", "cat": "canecas", "name": "Caneca Nossa Senhora de Fátima", "imgs": ["n/canecas-fatima"], "desc": "Três artes para escolher: creme e dourado, céu azul ou rosas.", "novo": 1, "list": ["Caneca 325 ml"]},
  {"id": "caneca-maezinha", "cat": "canecas", "name": "Caneca Mãezinha do Céu", "imgs": ["n/mae-do-ceu"], "desc": "Ilustração delicada de um lado e oração do outro."},
- {"id": "caneca-natal", "cat": "canecas", "name": "Caneca de Natal", "imgs": ["n/canecas-natal", "n/natal-caneca-botton"], "desc": "Artes de Natal e Ano Novo, com opção de incluir uma foto.", "novo": 1, "list": ["Caneca 325 ml", "Combina com bottons e camiseta"]},
+ {"id": "caneca-natal", "cat": "canecas", "name": "Caneca de Natal", "imgs": ["n/canecas-natal"], "desc": "Artes de Natal e Ano Novo, com opção de incluir uma foto.", "novo": 1, "list": ["Caneca 325 ml", "Combina com bottons e camiseta"]},
  {"id": "caneca-mar", "cat": "canecas", "name": "Caneca Mar e praia", "imgs": ["n/canecas-mar", "n/canecas-onda"], "desc": "Paisagens do mar com frases leves, arte nos dois lados.", "novo": 1, "list": ["Caneca 325 ml", "Vários modelos"]},
  {"id": "caneca-esporte", "cat": "canecas", "name": "Caneca para academias e equipes", "imgs": ["n/abks-2", "n/abks-3"], "desc": "Arte com o nome da academia, dojô ou time, envolvendo a caneca toda."},
  {"id": "colecao", "cat": "camisetas", "name": "Camiseta estampada", "imgs": ["n/colecao-preto", "n/colecao-branco", "n/colecao-amarelo", "n/colecao-azul", "n/colecao-rosa"], "desc": "Dez estampas para escolher: dino skatista, capivara astronauta, unicórnio, cachorro de óculos, gatinho na lua, xícara sorridente, vitrola retrô, montanha, onda tropical e buquê silvestre.", "list": ["Cores: preto, branco, amarelo, azul ou rosa", "Estampa A4 · 21 × 29,7 cm", "Informe o número da estampa (01 a 10) no orçamento"]},
@@ -437,7 +441,6 @@ const P=[
  {"id": "aceite", "cat": "camisetas", "name": "Camiseta Aceite, Entenda, Ame", "imgs": ["aceite-par"], "desc": "O sinal de “eu te amo” em LIBRAS com batimento cardíaco, em tons de azul.", "list": ["Branca ou preta"]},
  {"id": "animal-club", "cat": "camisetas", "name": "Camiseta Animal Club", "imgs": ["animal-club"], "desc": "Bichinhos 3D em arte exclusiva: gatinho, macaquinho e a turma dos cães."},
  {"id": "camiseta-esporte", "cat": "camisetas", "name": "Camiseta para academias e equipes", "imgs": ["n/abks-kit"], "desc": "A mesma arte da caneca, para montar o kit completo da sua equipe.", "novo": 1},
- {"id": "camiseta-natal", "cat": "camisetas", "name": "Camiseta de Natal", "imgs": ["n/natal-kit"], "desc": "Arte do presépio que combina com a caneca e os bottons de Natal.", "novo": 1},
  {"id": "camisetas", "cat": "camisetas", "name": "Camiseta com frase ou logo", "imgs": ["camisetas"], "desc": "Várias cores, com frases, nomes ou a marca da sua empresa."},
  {"id": "copo-vidro", "cat": "copos", "name": "Copo de vidro personalizado", "imgs": ["n/copo-aniversario"], "desc": "Para aniversários e festas, com o nome e a idade do aniversariante.", "novo": 1, "list": ["Ideal para lembrancinha de festa"]},
  {"id": "copos-coloridos", "cat": "copos", "name": "Copo térmico colorido", "imgs": ["copos-coloridos"], "desc": "Tampa com abertura, cores vibrantes e frase do seu jeito."},
